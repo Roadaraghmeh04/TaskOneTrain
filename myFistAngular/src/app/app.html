@@ -1,0 +1,57 @@
+<div>Welcome to Angular</div>
+
+<h1 [class.isSelected]="isSelected">Angular Application</h1>
+<button (click)="switchContent()">Switch Content</button>
+<div *ngIf=" !isNameVisible">
+  <button (click)="toggleSelection()">
+    {{ isSelected ? 'Deselect' : 'Select' }} Header
+  </button>
+
+  <div>{{ mytitle }}</div>
+
+  <div>Counter: {{ counter }}</div>
+
+  <button (click)="incrementCounter()">Increment</button>
+  <button (click)="toggleVisibility()">Toggle Visibility</button>
+
+  <div *ngIf="isvisible">
+    <h2>About Cars</h2>
+    <p>Cars are a popular mode of transportation.</p>
+
+    <h3>Types of Cars</h3>
+    <ul>
+      <li>Sedan</li>
+      <li>SUV</li>
+      <li>Truck</li>
+    </ul>
+
+    <h4>Popular Car Brands</h4>
+    <ul>
+      <li>Toyota</li>
+      <li>Ford</li>
+      <li>Honda</li>
+    </ul>
+  </div>
+
+  <div *ngIf="isvisible">this is another data</div>
+
+  <div>{{ birthDate }}</div>
+
+  <div>
+    <button (click)="addnewCar('new car')">Add New Car</button>
+
+    <ul>
+      <li *ngFor="let item of cars">{{item}}</li>
+
+      <p>Using trackBy with @ For</p>
+
+      @for(car of cars; track car) {
+      <li>{{car}}</li>
+      }
+    </ul>
+
+  </div>
+</div>
+  @if (isNameVisible){
+  <app-my-fist></app-my-fist>
+  }

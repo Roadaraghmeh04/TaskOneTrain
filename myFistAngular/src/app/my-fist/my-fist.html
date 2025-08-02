@@ -1,0 +1,23 @@
+<h1>Person Name</h1>
+
+<div style="margin-bottom: 16px;">
+  <h2>Salam {{ firstName }} {{ lastName }}</h2>
+
+  <input type="text" [(ngModel)]="firstName" placeholder="First Name" />
+  <input type="text" [(ngModel)]="lastName" placeholder="Last Name" style="margin-left: 8px;" />
+</div>
+
+<h2>Children</h2>
+
+<div style="margin-bottom: 16px;">
+  <input type="text" [(ngModel)]="newChild" placeholder="Child Name" />
+  <button (click)="addChild()" style="margin-left: 8px;">New Child</button>
+</div>
+
+<ul style="list-style-type: circle; padding-left: 20px;">
+  <li *ngFor="let child of children; let i = index">
+    {{ child }}
+    <button (click)="editChild(i)" style="margin-left: 8px;">Edit</button>
+    <button (click)="deleteChild(i)" style="margin-left: 4px;">Delete</button>
+  </li>
+</ul>
